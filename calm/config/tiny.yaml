@@ -1,0 +1,28 @@
+inherit: defaults
+seed: 42
+
+autoencoder:
+  batch_size: 8
+  epochs: 1
+  max_steps: 32
+  d_model: 128
+  latent_dim: 32
+  scheduler:
+    warmup_steps: 10
+    cosine_steps: 200
+
+calm:
+  batch_size: 4
+  epochs: 1
+  max_steps: 16
+  d_model: 128
+  latent_dim: 32
+  num_layers: 2
+  num_heads: 4
+  samples_N: 2
+  targets_M: 4
+  scheduler:
+    warmup_steps: 10
+    cosine_steps: 200
+  brier_samples: 2
+  eval_every: 4
