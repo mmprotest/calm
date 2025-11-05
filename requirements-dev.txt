@@ -1,0 +1,7 @@
+-r requirements.txt
+pytest
+pytest-xdist
+ruff
+black
+mypy
+pre-commit

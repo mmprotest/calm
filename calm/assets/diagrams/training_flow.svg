@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="180">
+<!-- Training flow diagram -->
+<rect x="10" y="10" width="400" height="160" fill="white" stroke="black" />
+<text x="30" y="50" font-family="monospace" font-size="13">[Data] -&gt; [Tokenizer] -&gt; [Chunks]</text>
+<text x="30" y="80" font-family="monospace" font-size="13">[Chunk VAE] => μ, logσ, z</text>
+<text x="30" y="110" font-family="monospace" font-size="13">[Energy Transformer] + Energy Score</text>
+</svg>

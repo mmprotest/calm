@@ -1,0 +1,9 @@
+torch>=2.3
+transformers>=4.39
+datasets
+numpy
+tqdm
+pyyaml
+tensorboard
+rich
+einops

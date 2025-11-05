@@ -1,0 +1,11 @@
+inherit: defaults
+calm:
+  epochs: 6
+  max_steps: null
+  lr: 0.00015
+  num_layers: 8
+  num_heads: 8
+  samples_N: 8
+  targets_M: 32
+  brier_samples: 16
+  freeze_autoencoder: false
