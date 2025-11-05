@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="160">
+<!-- Sampling diagram -->
+<rect x="10" y="10" width="400" height="140" fill="white" stroke="black" />
+<text x="30" y="50" font-family="monospace" font-size="13">Candidates + Energies</text>
+<text x="30" y="80" font-family="monospace" font-size="13">-- exact temperature --&gt; z*</text>
+<text x="30" y="110" font-family="monospace" font-size="13">-- batch approximation --&gt; z~</text>
+</svg>

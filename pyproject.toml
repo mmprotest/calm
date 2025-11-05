@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "calm-lm"
+version = "0.1.0"
+description = "Continuous Autoregressive Language Model"
+authors = [{name = "CALM Team"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.3",
+  "transformers>=4.39",
+  "datasets",
+  "numpy",
+  "tqdm",
+  "pyyaml",
+  "tensorboard",
+  "rich",
+  "einops",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-xdist", "ruff", "black", "mypy", "pre-commit"]
+
+[project.scripts]
+calm-train-ae = "calm.train.train_autoencoder:main"
+calm-train = "calm.train.train_calm:main"
+calm-eval = "calm.train.evaluate:main"
+calm-generate = "calm.train.generate:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["calm*"]
+
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"

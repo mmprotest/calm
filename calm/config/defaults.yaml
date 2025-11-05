@@ -1,0 +1,59 @@
+dataset: wikitext-2
+seed: 1337
+device: auto
+precision: bf16-mixed
+log_every: 10
+save_every: 500
+
+autoencoder:
+  K: 4
+  d_model: 512
+  latent_dim: 128
+  beta: 0.001
+  lr: 0.0003
+  batch_size: 64
+  epochs: 3
+  max_steps: null
+  weight_decay: 0.01
+  grad_clip: 1.0
+  scheduler:
+    warmup_steps: 500
+    cosine_steps: 10000
+  stop_grad_steps: 200
+
+calm:
+  context_length: 256
+  d_model: 512
+  latent_dim: 128
+  num_layers: 6
+  num_heads: 8
+  ff_multiplier: 4
+  dropout: 0.1
+  lr: 0.0002
+  weight_decay: 0.01
+  batch_size: 32
+  epochs: 3
+  max_steps: null
+  grad_clip: 1.0
+  scheduler:
+    warmup_steps: 500
+    cosine_steps: 20000
+  samples_N: 4
+  targets_M: 32
+  amp: true
+  freeze_autoencoder: true
+  brier_samples: 8
+  eval_every: 500
+  exact_temperature: false
+  temperature: 0.8
+
+logging:
+  tensorboard: true
+  jsonl_path: runs/metrics.jsonl
+  run_manifest: runs/manifest.json
+
+checkpoint:
+  dir: runs/checkpoints
+  keep_last: 3
+  monitor: val_brier
+  mode: min
